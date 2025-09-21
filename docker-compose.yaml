@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+  chatbot-ui:
+    build: .
+    platform: linux/x86_64
+    env_file: .env.local
+    restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - 3000:3000
